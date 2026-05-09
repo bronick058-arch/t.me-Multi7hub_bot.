@@ -44,24 +44,45 @@ Choose Your Product Below 👇""",
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    query = update.callback_query
-    await query.answer()
-    if query.data == 'demat':
-    await query.edit_message_text(
-        "📈 Open Demat Account\n\n✅ Earn From Stock Market\n💰 Zero Account Opening\n📲 Send Your Name & Mobile Number."
-    )
-
-elif query.data == 'card':
+    
     await query.edit_message_text(
         "💳 Credit Card Apply\n\n✅ Instant Process\n💰 High Limit Cards\n📲 Send Your Name & Mobile Number."
-    )
+    async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-elif query.data == 'loan':
-    await query.edit_message_text(
-        "💰 Personal Loan\n\n✅ Fast Approval\n🏦 Trusted Finance Partners\n📲 Send Your Name & Mobile Number."
-    )
+    query = update.callback_query
+    await query.answer()
 
-elif query.data == 'agent':
+    if query.data == 'demat':
+        await query.edit_message_text(
+            "📈 Open Demat Account\n\n"
+            "✅ Fast Account Opening\n"
+            "✅ Zero Hassle\n"
+            "✅ Trusted Platform\n\n"
+            "Send Your Name & Mobile Number."
+        )
+
+    elif query.data == 'card':
+        await query.edit_message_text(
+            "💳 Apply Credit Card\n\n"
+            "✅ Instant Process\n"
+            "✅ High Approval Chance\n\n"
+            "Send Your Name & Mobile Number."
+        )
+
+    elif query.data == 'loan':
+        await query.edit_message_text(
+            "💰 Personal Loan\n\n"
+            "✅ Quick Loan Approval\n"
+            "✅ Easy Process\n\n"
+            "Send Your Name & Mobile Number."
+        )
+
+    elif query.data == 'agent':
+        await query.edit_message_text(
+            "👥 Become Agent\n\n"
+            "Earn Commission By Referring Customers.\n\n"
+            "Send Your Name & City."
+        )
     await query.edit_message_text(
         "👥 Become Agent\n\n💸 Earn Commission On Every Referral\n📈 Work From Mobile\n📲 Send Your Name To Join."
     )
