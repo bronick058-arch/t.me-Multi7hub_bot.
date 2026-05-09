@@ -45,11 +45,19 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     query = update.callback_query
     await query.answer()
-
+if query.data == 'yt':
     await query.edit_message_text(
     "🎬 YouTube Premium Selected!\n\n💰 Price: ₹49\n⚡ Delivery: Instant\n\nSend Payment Screenshot After Payment."
 )
+elif query.data == 'spotify':
+    await query.edit_message_text(
+        "🎵 Spotify Premium Selected!\n\n💰 Price: ₹49\n⚡ Delivery: Instant\n\nSend Payment Screenshot After Payment."
+    )
 
+elif query.data == 'netflix':
+    await query.edit_message_text(
+        "🎥 Netflix Premium Selected!\n\n💰 Price: ₹99\n⚡ Delivery: Instant\n\nSend Payment Screenshot After Payment."
+    )
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
