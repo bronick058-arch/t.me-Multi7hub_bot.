@@ -46,13 +46,16 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
 
     if query.data == 'demat':
-        await query.edit_message_text(
-            "☑️ Open Demat Account\n\n"
-            "✅ Fast Account Opening\n"
-            "✅ Zero Hassle\n"
-            "✅ Trusted Platform\n\n"
-            "Send Your Name & Mobile Number."
-        )
+       if query.data == 'demat':
+    await query.edit_message_text(
+        "📈 Open 5paisa Demat Account\n\n"
+        "✅ Free Demat & Trading Account\n"
+        "✅ Flat ₹20 Brokerage\n"
+        "✅ Stocks, IPO, Mutual Funds & More\n"
+        "✅ Trusted By Millions Of Users\n\n"
+        "👉 Sign Up Here:\n"
+        "https://www.5paisa.com/demat-account?ReferralCode=55356194&ReturnUrl=invest-open-account"
+    )
 
     elif query.data == 'card':
         await query.edit_message_text(
