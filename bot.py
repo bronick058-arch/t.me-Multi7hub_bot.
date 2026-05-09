@@ -22,15 +22,16 @@ TOKEN = "7981776122:AAEZ_xQDj6daf26otl-ckVWnFkNv2Zqe3ag"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-  keyboard = [
+ keyboard = [
     [InlineKeyboardButton("📈 Open Demat Account", callback_data='demat')],
     [InlineKeyboardButton("💳 Apply Credit Card", callback_data='card')],
     [InlineKeyboardButton("💰 Personal Loan", callback_data='loan')],
     [InlineKeyboardButton("👥 Become Agent", callback_data='agent')],
 ]
-    reply_markup = InlineKeyboardMarkup(keyboard)
 
-    await update.message.reply_text(
+reply_markup = InlineKeyboardMarkup(keyboard)
+
+await update.message.reply_text(
     """👋 Welcome To Multi7Hub
 
 🔥 Premium Subscriptions
