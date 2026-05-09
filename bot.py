@@ -31,7 +31,13 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
-        "👋 Welcome To Multi7Hub!",
+        """"👋 Welcome To Multi7Hub
+
+🔥 Premium Subscriptions
+⚡ Instant Delivery
+💎 Trusted Service
+
+Choose Your Product Below 👇"""",
         reply_markup=reply_markup
     )
 
@@ -40,14 +46,9 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
-    if query.data == 'yt':
-        await query.edit_message_text("You Selected YouTube Premium")
-
-    elif query.data == 'spotify':
-        await query.edit_message_text("You Selected Spotify Premium")
-
-    elif query.data == 'netflix':
-        await query.edit_message_text("You Selected Netflix Premium")
+    await query.edit_message_text(
+    "🎬 YouTube Premium Selected!\n\n💰 Price: ₹49\n⚡ Delivery: Instant\n\nSend Payment Screenshot After Payment."
+)
 
 app = ApplicationBuilder().token(TOKEN).build()
 
