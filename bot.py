@@ -22,11 +22,12 @@ TOKEN = "7981776122:AAEZ_xQDj6daf26otl-ckVWnFkNv2Zqe3ag"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
-    keyboard = [
-        [InlineKeyboardButton("YouTube Premium", callback_data='yt')],
-        [InlineKeyboardButton("Spotify Premium", callback_data='spotify')],
-        [InlineKeyboardButton("Netflix Premium", callback_data='netflix')],
-    ]
+  keyboard = [
+    [InlineKeyboardButton("📈 Open Demat Account", callback_data='demat')],
+    [InlineKeyboardButton("💳 Apply Credit Card", callback_data='card')],
+    [InlineKeyboardButton("💰 Personal Loan", callback_data='loan')],
+    [InlineKeyboardButton("👥 Become Agent", callback_data='agent')],
+]
 
     reply_markup = InlineKeyboardMarkup(keyboard)
 
@@ -45,19 +46,25 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     query = update.callback_query
     await query.answer()
-    if query.data == 'yt':
-        await query.edit_message_text(
-        "🎬 YouTube Premium Selected!\n\n💰 Price: ₹49\n⚡ Delivery: Instant\n\nSend Payment Screenshot After Payment."
+    if query.data == 'demat':
+    await query.edit_message_text(
+        "📈 Open Demat Account\n\n✅ Earn From Stock Market\n💰 Zero Account Opening\n📲 Send Your Name & Mobile Number."
     )
-    elif query.data == 'spotify':
-        await query.edit_message_text(
-            "🎵 Spotify Premium Selected!\n\n💰 Price: ₹49\n⚡ Delivery: Instant\n\nSend Payment Screenshot After Payment."
-        )
-    
-    elif query.data == 'netflix':
-        await query.edit_message_text(
-            "🎥 Netflix Premium Selected!\n\n💰 Price: ₹99\n⚡ Delivery: Instant\n\nSend Payment Screenshot After Payment."
-        )
+
+elif query.data == 'card':
+    await query.edit_message_text(
+        "💳 Credit Card Apply\n\n✅ Instant Process\n💰 High Limit Cards\n📲 Send Your Name & Mobile Number."
+    )
+
+elif query.data == 'loan':
+    await query.edit_message_text(
+        "💰 Personal Loan\n\n✅ Fast Approval\n🏦 Trusted Finance Partners\n📲 Send Your Name & Mobile Number."
+    )
+
+elif query.data == 'agent':
+    await query.edit_message_text(
+        "👥 Become Agent\n\n💸 Earn Commission On Every Referral\n📈 Work From Mobile\n📲 Send Your Name To Join."
+    )
 app = ApplicationBuilder().token(TOKEN).build()
 
 app.add_handler(CommandHandler("start", start))
