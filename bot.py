@@ -31,14 +31,14 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
-        """"👋 Welcome To Multi7Hub
+    """👋 Welcome To Multi7Hub
 
 🔥 Premium Subscriptions
 ⚡ Instant Delivery
 💎 Trusted Service
 
-Choose Your Product Below 👇"""",
-        reply_markup=reply_markup
+Choose Your Product Below 👇""",
+    reply_markup=reply_markup
     )
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
