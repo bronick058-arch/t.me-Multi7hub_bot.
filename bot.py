@@ -45,9 +45,9 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
     await query.answer()
 
+   
     if query.data == 'demat':
-       if query.data == 'demat':
-    await query.edit_message_text(
+        await query.edit_message_text(
         "📈 Open 5paisa Demat Account\n\n"
         "✅ Free Demat & Trading Account\n"
         "✅ Flat ₹20 Brokerage\n"
