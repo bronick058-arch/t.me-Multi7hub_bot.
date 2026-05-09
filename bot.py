@@ -28,7 +28,6 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     [InlineKeyboardButton("💰 Personal Loan", callback_data='loan')],
     [InlineKeyboardButton("👥 Become Agent", callback_data='agent')],
 ]
-
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await update.message.reply_text(
